@@ -7,11 +7,10 @@ export default {
 
 export const Success = () => <Button colorScheme="teal" onClick={action("Clicked")}>Success</Button>
 export const Danger = () => <Button colorScheme="red" {...actions("onClick", "onMouseOver")}>Danger</Button>
-export const Clicked = (args : {children: string}) => <Button {...args}/>
+export const Clicked = (args : {children: string}) => <Button {...args} />
 
 Clicked.args ={
     children: 'Clicked',
     colorScheme: 'teal',
-    onClick: () => console.log("Clicked")
-    
+    onClick: () => console.log("Clicked", import.meta?.env?.STORYBOOK_BACKEND_URL),
 }
